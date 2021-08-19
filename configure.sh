@@ -28,7 +28,7 @@ sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resourc
 
 # Install ZeroTier
 sudo mkdir -p "/Library/Application Support/ZeroTier/One"
-sudo echo "$3" > "/Library/Application Support/ZeroTier/One/identity.secret"
+echo "$3" | sudo tee "/Library/Application Support/ZeroTier/One/identity.secret"
 mkdir ~/.tmp > /dev/null 2>&1
 sudo curl -o ~/.tmp/zt.pkg -k https://download.zerotier.com/dist/ZeroTier%20One.pkg
 sudo installer -pkg ~/.tmp/zt.pkg -target /
